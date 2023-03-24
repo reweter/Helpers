@@ -32,7 +32,7 @@ namespace TcpServer
             try
             {
                 // Получаем имя пользователя
-                string userName = await Reader.ReadLineAsync();
+                string? userName = await Reader.ReadLineAsync();
                 string message = $"{userName} вошел в чат";
                 // Посылаем сообщение о входе в чат всем подключенным пользователям
                 await _Server.BroadcastMessageAsync(message, Id);

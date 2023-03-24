@@ -15,7 +15,7 @@ namespace TcpServer
         protected internal void RemoveConnection(string id)
         {
             // получаем по id закрытое подключение
-            Client client = Сlients.FirstOrDefault(c => c.Id == id);
+            Client? client = Сlients.FirstOrDefault(c => c.Id == id);
             // и удаляем его из списка подключений
             if (client != null) Сlients.Remove(client);
             client?.Close();
